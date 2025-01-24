@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuietSpace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QuietSpace</h1>
+    <section id="intro">
+      <h2>Welcome to QuietSpace!</h2>
+      <p>Ever found yourself wondering what to do during those awkward gaps between classes?. You think about heading to the library, only to find it overcrowded—or worse, taken over by couples.</p>
+      <p>That's where this website comes in. With just a few clicks, you can instantly find empty classrooms to study, relax, or catch up on work without distractions. No more wandering around aimlessly—just a smarter way to make the most of your free time!</p>
+      <p>Select a <strong>day</strong> and <strong>hour</strong>, then click "Check Availability" to find empty classrooms instantly.</p>
+  </section>
+    
+    <label for="day">Select Day:</label>
+    <select id="day">
+        <option value="M">Monday</option>
+        <option value="T">Tuesday</option>
+        <option value="W">Wednesday</option>
+        <option value="Th">Thursday</option>
+        <option value="F">Friday</option>
+    </select>
+    <br>
+    <label for="hour">Select Hour:</label>
+    <select id="hour">
+        <option value="1">1st Hour (8:00 - 9:00)</option>
+        <option value="2">2nd Hour (9:00 - 10:00)</option>
+        <option value="3">3rd Hour (10:00 - 11:00)</option>
+        <option value="4">4th Hour (11:00 - 12:00)</option>
+        <option value="5">5th Hour (12:00 - 1:00)</option>
+        <option value="6">6th Hour (1:00 - 2:00)</option>
+        <option value="7">7th Hour (2:00 - 3:00)</option>
+        <option value="8">8th Hour (3:00 - 4:00)</option>
+        <option value="9">9th Hour (4:00 - 5:00)</option>
+        <option value="10">10th Hour (5:00 - 6:00)</option>
+    </select>
+    
+    <button onclick="checkAvailability()">Check Availability</button>
+
+    <div id="result"></div>
+    <br><br>
+    <button onclick="window.location.href='aboutme.html'">About Me</button>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
