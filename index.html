@@ -1,66 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuietSpace</title>
+  <meta charset="UTF-8">
+  <title>QuietSpace - On Break</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #b8c1cc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 2s ease-in;
+    }
 
-    <script defer src="/_vercel/insights/script.js"></script>
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QGJMLC23D"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+      color: #4fd1c5;
+      font-size: 2rem; /* Increased font size */
+      text-shadow: 2px 2px 5px rgba(79, 209, 197, 0.3);
+      margin-top: 20px; /* Added top margin to keep distance from the top */
+      margin-bottom: 30px;
+    }
 
-    gtag('config', 'G-0QGJMLC23D');
-    </script>
+    .crab img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(79, 209, 197, 0.2);
+      animation: glow 1.5s infinite alternate;
+    }
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px rgba(79, 209, 197, 0.4); }
+      100% { box-shadow: 0 0 20px rgba(79, 209, 197, 0.6); }
+    }
+
+    p {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.2rem; /* Increased font size */
+      color: #a0aec0;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.9rem;
+      color: #b8c1cc;
+      position: absolute;
+      bottom: 10px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #b8c1cc;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #4fd1c5;
+    }
+
+    /* Mobile Styling */
+    @media (max-width: 767px) {
+      h1 {
+        font-size: 1.5rem; /* Adjusted font size for mobile */
+      }
+
+      p {
+        font-size: 1rem; /* Adjusted font size for mobile */
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>QuietSpace</h1>
-    <section id="intro">
-      <p>Ever found yourself wondering what to do during those awkward gaps between classes?. You think about heading to the library, only to find it overcrowded—or worse, taken over by couples.</p>
-      <p>That's where this website comes in. With just a few clicks, you can instantly find empty classrooms to study, relax, or catch up on work without distractions. No more wandering around aimlessly—just a smarter way to make the most of your free time!</p>
-      <p>Select a <strong>day</strong> and <strong>hour/s</strong>, then click "Check Availability" to find empty classrooms instantly.</p>
-  </section>
-    
-    <label for="day">Select Day:</label>
-    <select id="daySelect">
-        <option value="M">Monday</option>
-        <option value="T">Tuesday</option>
-        <option value="W">Wednesday</option>
-        <option value="Th">Thursday</option>
-        <option value="F">Friday</option>
-    </select>
-    
-    <br>
-    <label for="hour">Select Hour/s:</label>
-    
-    <div class="hour-buttons">
-        <button class="hour-btn" data-hour="1">1st Hour (8:00 - 9:00 AM)</button>
-        <button class="hour-btn" data-hour="2">2nd Hour (9:00 - 10:00 AM)</button>
-        <button class="hour-btn" data-hour="3">3rd Hour (10:00 - 11:00 AM)</button>
-        <button class="hour-btn" data-hour="4">4th Hour (11:00 - 12:00 PM)</button>
-        <button class="hour-btn" data-hour="5">5th Hour (12:00 - 1:00 PM)</button>
-        <button class="hour-btn" data-hour="6">6th Hour (1:00 - 2:00 PM)</button>
-        <button class="hour-btn" data-hour="7">7th Hour (2:00 - 3:00 PM)</button>
-        <button class="hour-btn" data-hour="8">8th Hour (3:00 - 4:00 PM)</button>
-        <button class="hour-btn" data-hour="9">9th Hour (4:00 - 5:00 PM)</button>
-        <button class="hour-btn" data-hour="10">10th Hour (5:00 - 6:00 PM)</button>
-    </div>
-    
-    <button onclick="checkAvailability()">Check Availability</button>
-
-
-    <div id="result"></div>
-    <br><br>
-    <button onclick="clearSelections()">Clear Selections</button>
-    <button onclick="window.location.href='aboutme.html'">About</button>
-    
-
-    <script src="script.js"></script>
+  <h1>QuietSpace: On Break - Be Back Soon!</h1>
+  <div class="crab">
+    <img src="spaceinvaders-videogames.gif" alt="Break time GIF">
+  </div>
+  <p>See you next semester 🦀</p>
+  
+  <!-- <footer>
+    <p>Developed by <a href="https://www.linkedin.com/in/sdeevanapalli/" target="_blank">Shriniketh</a>. Catch you next semester.</p>
+  </footer> -->
+  
 </body>
 </html>
