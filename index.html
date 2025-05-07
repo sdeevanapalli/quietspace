@@ -28,9 +28,9 @@
     h1 {
       font-family: 'Press Start 2P', cursive;
       color: #4fd1c5;
-      font-size: 2rem; /* Increased font size */
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       text-shadow: 2px 2px 5px rgba(79, 209, 197, 0.3);
-      margin-top: 20px; /* Added top margin to keep distance from the top */
+      margin-top: 20px;
       margin-bottom: 30px;
     }
 
@@ -49,58 +49,39 @@
 
     p {
       font-family: 'Press Start 2P', cursive;
-      font-size: 1.2rem; /* Increased font size */
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
       color: #a0aec0;
       font-weight: 500;
       margin-top: 25px;
     }
-
+    
     footer {
-      margin-top: 40px;
       font-family: 'Press Start 2P', cursive;
-      font-size: 0.9rem;
+      font-size: clamp(0.8rem, 2vw, 1rem);
       color: #b8c1cc;
       position: absolute;
       bottom: 10px;
+      text-align: center;
     }
 
     footer a {
       text-decoration: none;
       color: #b8c1cc;
-      font-size: 1rem;
       transition: color 0.3s;
     }
 
     footer a:hover {
       color: #4fd1c5;
     }
-
-    /* Mobile Styling */
-    @media (max-width: 767px) {
-      h1 {
-        font-size: 1.5rem; /* Adjusted font size for mobile */
-      }
-
-      p {
-        font-size: 1rem; /* Adjusted font size for mobile */
-      }
-
-      footer {
-        font-size: 0.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <h1>QuietSpace: On Break - Be Back Soon!</h1>
+  <h1>QuietSpace</h1>
+  <h1>On Break - Be Back Soon!</h1>
   <div class="crab">
     <img src="spaceinvaders-videogames.gif" alt="Break time GIF">
   </div>
-  <p>See you next semester 🦀</p>
-  
-  <!-- <footer>
-    <p>Developed by <a href="https://www.linkedin.com/in/sdeevanapalli/" target="_blank">Shriniketh</a>. Catch you next semester.</p>
-  </footer> -->
-  
+  <p id="semesterMessage">See you next semester 🦀</p>
+
 </body>
 </html>
