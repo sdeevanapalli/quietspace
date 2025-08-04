@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuietSpace</title>
+  <meta charset="UTF-8">
+  <title>QuietSpace - On Break</title>
+  
+<script defer src="/_vercel/insights/script.js"></script>
 
-    <meta property="og:title" content="QuietSpace - Find Free Classrooms at BPHC" />
-    <meta property="og:description" content="Quickly check which classrooms are free during class gaps." />
-    <meta property="og:image" content="https://quietspacebphc.vercel.app/favicon.png" />
-    <meta property="og:url" content="https://quietspacebphc.vercel.app" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QGJMLC23D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-    <script defer src="/_vercel/insights/script.js"></script>
+gtag('config', 'G-0QGJMLC23D');
+</script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QGJMLC23D"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <link rel="icon" type="image/png" href="spaceinvaders-videogames.gif">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #b8c1cc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 2s ease-in;
+    }
 
-    gtag('config', 'G-0QGJMLC23D');
-    </script>
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="https://quietspacebphc.vercel.app/favicon.png">
+    h1, h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #4fd1c5;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      text-shadow: 2px 2px 5px rgba(79, 209, 197, 0.3);
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .crab img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(79, 209, 197, 0.2);
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px rgba(79, 209, 197, 0.4); }
+      100% { box-shadow: 0 0 20px rgba(79, 209, 197, 0.6); }
+    }
+
+    p {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: #a0aec0;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    footer {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #b8c1cc;
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #b8c1cc;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #4fd1c5;
+    }
+  </style>
 </head>
 <body>
-    <h1>QuietSpace</h1>
-    <section id="intro">
-      <p>Ever found yourself wondering what to do during those awkward gaps between classes?. You think about heading to the library, only to find it overcrowded—or worse, taken over by couples.</p>
-      <p>That's where this website comes in. With just a few clicks, you can instantly find empty classrooms to study, relax, or catch up on work without distractions. No more wandering around aimlessly—just a smarter way to make the most of your free time!</p>
-      <p>Select a <strong>day</strong> and <strong>hour/s</strong>, then click "Check Availability" to find empty classrooms instantly.</p>
-  </section>
-    
-    <label for="day">Select Day:</label>
-    <select id="daySelect">
-        <option value="M">Monday</option>
-        <option value="T">Tuesday</option>
-        <option value="W">Wednesday</option>
-        <option value="Th">Thursday</option>
-        <option value="F">Friday</option>
-    </select>
-    
-    <br>
-    <label for="hour">Select Hour/s:</label>
-    
-    <div class="hour-buttons">
-        <button class="hour-btn" data-hour="1">1st Hour (8:00 - 9:00 AM)</button>
-        <button class="hour-btn" data-hour="2">2nd Hour (9:00 - 10:00 AM)</button>
-        <button class="hour-btn" data-hour="3">3rd Hour (10:00 - 11:00 AM)</button>
-        <button class="hour-btn" data-hour="4">4th Hour (11:00 - 12:00 PM)</button>
-        <button class="hour-btn" data-hour="5">5th Hour (12:00 - 1:00 PM)</button>
-        <button class="hour-btn" data-hour="6">6th Hour (1:00 - 2:00 PM)</button>
-        <button class="hour-btn" data-hour="7">7th Hour (2:00 - 3:00 PM)</button>
-        <button class="hour-btn" data-hour="8">8th Hour (3:00 - 4:00 PM)</button>
-        <button class="hour-btn" data-hour="9">9th Hour (4:00 - 5:00 PM)</button>
-        <button class="hour-btn" data-hour="10">10th Hour (5:00 - 6:00 PM)</button>
-    </div>
-    
-    <button onclick="checkAvailability()">Check Availability</button>
+  <h1>QuietSpace</h1>
+  <p>Back online soon for this semester. Stay tuned!</p>
+  <div class="crab">
+    <img src="spaceinvaders-videogames.gif" alt="Break time GIF">
+  </div>
 
-
-    <div id="result"></div>
-    <br><br>
-    <button onclick="clearSelections()">Clear Selections</button>
-    <button onclick="window.location.href='aboutme.html'">About</button>
-    
-
-    <script src="script.js"></script>
 </body>
 </html>
