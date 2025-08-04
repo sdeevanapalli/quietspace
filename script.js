@@ -13,7 +13,7 @@
 // ;
 
 // ABOVE DATA IS FOR 24-25 SEM 2, RETAINED IN CODE FOR TESTING PURPOSES
-// BELOW DATA IS FOR 25-26 SEM 1, UPDATED ON 4 AUG
+
 const timetable =
 [['', 'M', 'T', 'W', 'Th', 'F'],
 ['1', 'F101\nF104\nF105\nF106\nF107\nF108\nF109\nF201\nF202\nF203\nF204\nG101\nG104\nG105\nG106\nG107\nG108\nG204\nG205\nG207\nG208\nI112\nI122\nI210\nI211\nI213\nI221\nJ107\nJ114\nJ119\nJ120\nJ121\nJ206\nJ214\nJ217\nJ218', 'F101\nF103\nF104\nF105\nF106\nF107\nF108\nF109\nF201\nF202\nF207\nF208\nG102\nG103\nG104\nG105\nG106\nG107\nG108\nG202\nG203\nG206\nG207\nG208\nI111\nI113\nI114\nI122\nI211\nI212\nI213\nI221\nJ107\nJ114\nJ119\nJ120\nJ121\nJ206\nJ214\nJ217\nJ220', 'F101\nF102\nF103\nF104\nF106\nF107\nF109\nF201\nF202\nF204\nG101\nG106\nG107\nG108\nG204\nG205\nG208\nI112\nI122\nI210\nI212\nI213\nI221\nJ107\nJ114\nJ119\nJ120\nJ121\nJ206\nJ214\nJ217\nJ218', 'F101\nF102\nF103\nF104\nF105\nF106\nF107\nF108\nF202\nF203\nF204\nF208\nG101\nG103\nG104\nG105\nG106\nG107\nG108\nG202\nG203\nG206\nG207\nG208\nI111\nI113\nI114\nI210\nI212\nI213\nI222\nJ107\nJ114\nJ119\nJ120\nJ121\nJ206\nJ214\nJ217\nJ218\nJ220', 'F101\nF102\nF103\nF104\nF106\nF107\nF108\nF109\nF201\nF203\nF204\nG106\nG107\nG108\nG205\nG208\nI112\nI113\nI122\nI212\nI213\nI221\nJ107\nJ114\nJ119\nJ120\nJ121\nJ206\nJ214\nJ217\nJ218'],
@@ -30,23 +30,29 @@ const timetable =
 
 function checkAvailability() {
     const day = document.getElementById('daySelect').value;
-    const selectedHours = Array.from(document.querySelectorAll('.hour-btn.selected')).map(button => button.dataset.hour);
+    const selectedHours = Array.from(document.querySelectorAll('.hour-btn.selected')).map(button => button.dataset.hour); // Get selected hours from buttons
 
     if (selectedHours.length === 0) {
         alert("Please select at least one hour.");
         return;
     }
 
-    const dayIndex = ['M', 'T', 'W', 'Th', 'F'].indexOf(day) + 1;
-    let availableRooms = null;
+    const dayIndex = ['M', 'T', 'W', 'Th', 'F'].indexOf(day) + 1; 
+    let availableRooms = null; 
 
+    
     selectedHours.forEach(hour => {
-        const hourIndex = parseInt(hour);
+        const hourIndex = parseInt(hour); 
+
+        
         if (timetable[hourIndex] && timetable[hourIndex][dayIndex]) {
             const rooms = timetable[hourIndex][dayIndex].split('\n');
+
             if (availableRooms === null) {
+                
                 availableRooms = new Set(rooms);
             } else {
+                
                 availableRooms = new Set(rooms.filter(room => availableRooms.has(room)));
             }
         }
@@ -54,64 +60,39 @@ function checkAvailability() {
 
     const resultElement = document.getElementById('result');
     if (availableRooms && availableRooms.size > 0) {
+        
         const sortedRooms = Array.from(availableRooms).sort((a, b) => {
-            const blockA = a[0];
-            const blockB = b[0];
-
+            const blockA = a[0]; 
+            const blockB = b[0]; 
+            
             if (blockA < blockB) return -1;
             if (blockA > blockB) return 1;
+            
             const numA = parseInt(a.slice(1));
             const numB = parseInt(b.slice(1));
             return numA - numB;
         });
-
-        // Split into Old Acad (F,G) and New Acad (others)
-        const oldAcad = sortedRooms.filter(room => room[0] === 'F' || room[0] === 'G');
-        const newAcad = sortedRooms.filter(room => room[0] !== 'F' && room[0] !== 'G');
-
-        // HTML with side by side columns, no border/background
-        const output = `
-            <style>
-                .container {
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 32px;
-                    margin-top: 10px;
-                }
-                .column {
-                    flex: 1;
-                    padding: 10px;
-                    min-width: 150px;
-                    /* No border, no border-radius, no background */
-                }
-            </style>
-            <div class="container">
-                <div class="column">
-                    <strong>Old Academic Block:</strong><br>
-                    ${oldAcad.length ? oldAcad.join('<br>') : '—'}
-                </div>
-                <div class="column">
-                    <strong>New Academic Block:</strong><br>
-                    ${newAcad.length ? newAcad.join('<br>') : '—'}
-                </div>
-            </div>
-        `;
-        resultElement.innerHTML = output;
+        resultElement.innerHTML = `Classrooms available: <br><br> ${sortedRooms.join('<br>')}`;
     } else {
         resultElement.innerHTML = `No rooms available.`;
     }
 }
 
-// Button selection UI logic
+
 document.querySelectorAll('.hour-btn').forEach(button => {
     button.addEventListener('click', function () {
         this.classList.toggle('selected');
     });
 });
 
+
 function clearSelections() {
+    
     document.querySelectorAll('.hour-btn').forEach(button => {
         button.classList.remove('selected');
     });
+
+    
     document.getElementById('result').innerHTML = '';
 }
+
