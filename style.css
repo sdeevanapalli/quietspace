@@ -3,18 +3,18 @@ body {
 font-family: 'Poppins', sans-serif;
 margin: 0;
 padding: 20px;
-background: #010101; /* Much deeper black */
+background: #0a0f16; /* Lighter dark blue-gray instead of pure black */
 text-align: center;
-color: #b8c1cc; /* Same soft desaturated gray */
+color: #c5d2e0; /* Lighter and brighter soft gray */
 }
 h1, h2 {
 font-family: 'Press Start 2P', cursive;
-color: #58a6ff; /* Cool electric blue instead of teal */
-text-shadow: 2px 2px 5px rgba(88, 166, 255, 0.3);
+color: #6bb6ff; /* Brighter, more vibrant blue */
+text-shadow: 2px 2px 5px rgba(107, 182, 255, 0.4);
 }
 p {
 font-size: 1rem;
-color: #a0aec0; /* Same gentle cool gray */
+color: #b4c5d4; /* Lighter cool gray */
 font-weight: 500;
 }
 /* Buttons */
@@ -25,10 +25,10 @@ padding: 12px 18px;
 margin: 10px;
 border: none;
 border-radius: 8px;
-background: #58a6ff;
-color: black;
+background: #6bb6ff; /* Brighter blue */
+color: #0a0f16; /* Dark background color for contrast */
 cursor: pointer;
-box-shadow: 3px 3px 8px rgba(88, 166, 255, 0.2);
+box-shadow: 3px 3px 8px rgba(107, 182, 255, 0.3);
 transition: transform 0.2s, box-shadow 0.2s;
 display: block;
 width: fit-content;
@@ -36,15 +36,15 @@ margin: 15px auto;
 }
 button:hover {
 transform: scale(1.05);
-box-shadow: 4px 4px 12px rgba(88, 166, 255, 0.4);
+box-shadow: 4px 4px 12px rgba(107, 182, 255, 0.5);
 }
 /* Results Box */
 #result {
 margin-top: 20px;
 font-size: 1.2em;
-color: #58a6ff; /* Cool electric blue */
+color: #6bb6ff; /* Brighter blue */
 font-weight: bold;
-background: rgba(255, 255, 255, 0.08);
+background: rgba(255, 255, 255, 0.12); /* Slightly more visible background */
 padding: 12px 18px;
 border-radius: 10px;
 display: inline-block;
@@ -58,24 +58,28 @@ justify-content: center;
 margin-top: 20px;
 }
 .hour-btn.selected {
-background: #58a6ff; /* Cool electric blue */
-color: #000;
+background: #6bb6ff; /* Brighter blue */
+color: #0a0f16; /* Dark text for contrast */
 }
 /* Styling the Buttons */
 .hour-btn {
-background: #0d1117; /* Much darker button background */
-color: #fff;
+background: #1a2332; /* Lighter dark button background */
+color: #e6edf5; /* Much lighter text */
 padding: 10px 16px;
 border-radius: 8px;
 cursor: pointer;
 font-size: 0.8em;
 font-weight: bold;
-border: 2px solid #58a6ff; /* Cool electric blue */
+border: 2px solid #6bb6ff; /* Brighter blue border */
 transition: background 0.3s, box-shadow 0.3s;
 width: 45%;
 white-space: nowrap;
 text-align: center;
 overflow: hidden;
+}
+.hour-btn:hover {
+background: #243142; /* Slightly lighter on hover */
+box-shadow: 0 0 8px rgba(107, 182, 255, 0.3);
 }
 /* Responsive Design for Larger Screens */
 @media (min-width: 768px) {
@@ -92,16 +96,16 @@ width: 100%;
 }
 /* Day Select Dropdown */
 #daySelect {
-background-color: #0d1117; /* Much darker dropdown background */
+background-color: #1a2332; /* Lighter dropdown background */
 text-align: center;
 font-family: 'Press Start 2P', cursive;
 font-size: 1em;
-color: #fff;
+color: #e6edf5; /* Much lighter text */
 padding: 8px 12px;
 font-size: 1em;
 font-weight: bold;
 border-radius: 8px;
-border: 2px solid #58a6ff; /* Cool electric blue */
+border: 2px solid #6bb6ff; /* Brighter blue border */
 margin: 15px auto;
 width: 70%;
 transition: 0.3s;
@@ -109,6 +113,7 @@ display: block;
 }
 /* Day Select - Focused State */
 #daySelect:focus {
-border-color: #58a6ff;
-box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+border-color: #6bb6ff;
+box-shadow: 0 0 10px rgba(107, 182, 255, 0.6);
+outline: none;
 }
