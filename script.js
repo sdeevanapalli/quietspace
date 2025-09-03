@@ -15,6 +15,8 @@
 // ABOVE DATA IS FOR 24-25 SEM 2, RETAINED IN CODE FOR TESTING PURPOSES
 // BELOW DATA IS FOR 25-26 SEM 1, UPDATED ON 4TH AUG
 // Update 25 Aug with TT3 Changes Included
+// Update 27 Aug with TT4 Changes Included
+
 
 const timetable =
 [['', 'M', 'T', 'W', 'Th', 'F'],
