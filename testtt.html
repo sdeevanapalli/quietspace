@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuietSpace - On Break</title>
+  
+<script defer src="/_vercel/insights/script.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QGJMLC23D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-0QGJMLC23D');
+</script>
+
+  <link rel="icon" type="image/png" href="spaceinvaders-videogames.gif">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #b8c1cc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    h1, h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #4fd1c5;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      text-shadow: 2px 2px 5px rgba(79, 209, 197, 0.3);
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .crab img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(79, 209, 197, 0.2);
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px rgba(79, 209, 197, 0.4); }
+      100% { box-shadow: 0 0 20px rgba(79, 209, 197, 0.6); }
+    }
+
+    p {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: #a0aec0;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    footer {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #b8c1cc;
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #b8c1cc;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #4fd1c5;
+    }
+  </style>
+</head>
+<body>
+  <h1>QuietSpace</h1>
+  <p>The website is turned off temporarily.</p>
+  <p>Back online on 11th Sept.</p>
+  <div class="crab">
+    <img src="spaceinvaders-videogames.gif" alt="Break time GIF">
+  </div>
+
+</body>
+</html>
