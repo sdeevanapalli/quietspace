@@ -37,7 +37,9 @@ To run this project locally, follow these steps:
 
 ## **Contributing**
 
-Feel free to fork the repository and create a pull request if you'd like to contribute to the project. All contributions are welcome!
+Contributions are welcome.
+
+For this repository's timetable PR flow (updating the generated array in `script.js`), review checklist, and versioning notes, see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
 ## **Contact**
 For any questions or feedback, reach out to me at:  
