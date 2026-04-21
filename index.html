@@ -25,12 +25,35 @@
     <link rel="icon" type="image/png" href="https://quietspacebphc.vercel.app/favicon.png">
 </head>
 <body>
-    <div id="disclaimer-banner" style="background-color: #e53935; color: white; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.5); font-family: 'Poppins', sans-serif;">
-        <p style="margin: 0 0 12px 0; color: white; font-size: 0.95rem; line-height: 1.5; font-weight: 500;">
-            <strong>Guidelines Reminder:</strong> I created QuietSpace solely for academic purposes, specifically to help students find environments for studying, productive work, and project collaboration. I expect all users to respect campus facilities and maintain the public integrity of these academic spaces. Please act responsibly, as misuse of these classrooms violates campus policies and may jeopardize my ability to keep this tool available.
-        </p>
-        <button onclick="document.getElementById('disclaimer-banner').style.display='none'" style="margin: 0 auto; background: white; color: #e53935; font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: bold; padding: 8px 16px; border-radius: 6px; box-shadow: none; border: none; cursor: pointer; transition: opacity 0.2s;">I Understand</button>
+    <div id="disclaimer-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 10000; display: flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif; backdrop-filter: blur(4px);">
+        <div style="background-color: #e53935; color: white; padding: 30px 25px; border-radius: 12px; max-width: 500px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.8); margin: 20px;">
+            <p style="margin: 0 0 20px 0; color: white; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+                <strong>Guidelines Reminder:</strong> I created QuietSpace solely for academic purposes, specifically to help students find environments for studying, productive work, and project collaboration. I expect all users to respect campus facilities and maintain the public integrity of these academic spaces. Please act responsibly, as misuse of these classrooms violates campus policies and may jeopardize my ability to keep this tool available.
+            </p>
+            <button id="disclaimer-btn" disabled onclick="document.getElementById('disclaimer-modal').style.display='none'" style="background: #bdbdbd; color: #666; font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: bold; padding: 10px 24px; border-radius: 6px; box-shadow: none; border: none; cursor: not-allowed; transition: all 0.3s; pointer-events: none;">I Understand (5s)</button>
+        </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("disclaimer-btn");
+            let timeLeft = 5;
+            const timerId = setInterval(() => {
+                timeLeft--;
+                if (timeLeft > 0) {
+                    btn.innerText = `I Understand (${timeLeft}s)`;
+                } else {
+                    clearInterval(timerId);
+                    btn.innerText = "I Understand";
+                    btn.disabled = false;
+                    btn.style.background = "white";
+                    btn.style.color = "#e53935";
+                    btn.style.cursor = "pointer";
+                    btn.style.pointerEvents = "auto";
+                }
+            }, 1000);
+        });
+    </script>
 
     <h1>QuietSpace</h1>
     <section id="intro">
