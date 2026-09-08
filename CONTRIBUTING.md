@@ -61,3 +61,7 @@ Before opening a PR:
 - Explain any manual room exclusions in PR notes.
 - Do not break existing output shape expected by the main app.
 - Prefer deterministic, reproducible script changes.
+
+## Contributors
+
+- [Mayank Raj](https://github.com/tomiokagiyuwu) - Updated the entire timetable data to Semester 1, 2026-27, including all timetable changes.

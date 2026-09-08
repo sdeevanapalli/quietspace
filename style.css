@@ -17,6 +17,41 @@ font-size: 1rem;
 color: #b4c5d4; /* Lighter cool gray */
 font-weight: 500;
 }
+.contributors-box {
+width: 100%;
+box-sizing: border-box;
+margin: 28px auto 12px;
+padding: 18px 22px;
+border: 1px solid rgba(107, 182, 255, 0.45);
+border-radius: 8px;
+background: rgba(10, 15, 22, 0.82);
+}
+.contributors-box h2 {
+margin: 0 0 12px;
+font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+}
+.contributor-entry {
+margin: 0;
+font-size: 0.95rem;
+overflow-wrap: anywhere;
+}
+.contributors-box a {
+color: #c5d2e0;
+font-size: inherit;
+text-decoration: none;
+}
+.contributors-box a:hover {
+color: #6bb6ff;
+}
+@media (min-width: 1024px) {
+.contributors-box {
+width: fit-content;
+max-width: 100%;
+}
+.contributor-entry {
+white-space: nowrap;
+}
+}
 /* Buttons */
 button {
 font-family: 'Press Start 2P', cursive;
